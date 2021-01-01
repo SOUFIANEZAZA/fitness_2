@@ -27,7 +27,7 @@ bot = Bot(
     )
 #hashtag list to tag in a media
 hashtagList = [
-            '#shoponline'
+            '#بيع'
 ]
 
 #Program For Unfollow Everyone
@@ -205,13 +205,13 @@ def ig_directmessage():
     print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
     while True:
         try:
-            USER = bot.get_hashtag_users(hashtag="FITNESS")
+            USER = bot.get_hashtag_users(hashtag="بيع")
             USER_IDD = random.choice(USER)
             NAME = bot.get_username_from_user_id(USER_IDD)
-            FULL_TEXT = ("Hi "+NAME+", "+INUsrp_TEXT)
+            FULL_TEXT = ("مرحبا يا من أتاه الحض كله "+NAME+", "+INUsrp_TEXT)
             bot.send_profile(profile_user_id=bot.user_id,user_ids=USER_IDD,text=FULL_TEXT)
             bot.logger.info("Message Sented to "+ NAME)
-            countdown(1500)
+            countdown(1000)
         except KeyboardInterrupt:
             break
             clear()
